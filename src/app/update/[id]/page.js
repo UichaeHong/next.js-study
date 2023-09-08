@@ -9,7 +9,7 @@ export default function Update() {
   const params = useParams(); // 2. id 값 가져오기 위해 params 가져오기
   const id = params.id; // id라는 변수에 id 값 저장
   useEffect(() => {
-    fetch("http://localhost:9999/topics/" + id) // 1. id = fetch 할 때 현재 아이디값 필요
+    fetch(process.env.NEXT_PUBLIC_API_URL + "topics/" + id) // 1. id = fetch 할 때 현재 아이디값 필요
       .then((resp) => resp.json())
       .then((result) => {
         // console.log(result);

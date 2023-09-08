@@ -15,7 +15,7 @@ export default function Create() {
           },
           body: JSON.stringify({ title, body }),
         };
-        fetch(process.env.NEXT_PUBLIC_API_URL + `topics`, options) // POST 요청 보냄 / 서버쪽으로 데이터를 전송해서 데이터를 추가하려고 하기 때문에 option값 필요
+        fetch(process.env.NEXT_PUBLIC_API_URL + "/topics", options) // POST 요청 보냄 / 서버쪽으로 데이터를 전송해서 데이터를 추가하려고 하기 때문에 option값 필요
           .then((res) => res.json()) // 서버에서 응답을 JSON 형식으로 파싱한다
           .then((result) => {
             // 파싱된 JSON 응답을 처리하는 콜백 함수를 정의하고 여기서는 응답에서 'id' 속성을 추출하고, 이를 'lastid' 변수에 저장
